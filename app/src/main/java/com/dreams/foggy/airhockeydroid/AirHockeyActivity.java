@@ -1,4 +1,4 @@
-package com.dreams.foggy.opengltest;
+package com.dreams.foggy.airhockeydroid;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class AirHockeyActivity extends AppCompatActivity {
     private GLSurfaceView glSurfaceView;
     private boolean rendererSet = false;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(supportsEs2){
             glSurfaceView.setEGLContextClientVersion(2);
-            glSurfaceView.setRenderer(new Renderer());
+            glSurfaceView.setRenderer(new AirHockeyRenderer());
             rendererSet = true;
         }else{
             Toast.makeText(this, "this device does not support OpenGL ES 2.0",Toast.LENGTH_LONG).show();

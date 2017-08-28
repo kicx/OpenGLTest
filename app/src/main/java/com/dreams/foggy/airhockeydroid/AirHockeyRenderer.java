@@ -1,4 +1,4 @@
-package com.dreams.foggy.opengltest;
+package com.dreams.foggy.airhockeydroid;
 
 import android.opengl.GLSurfaceView;
 
@@ -14,7 +14,7 @@ import static android.opengl.GLES20.glViewport;
  * Created by lee on 8/27/2017.
  */
 
-public class Renderer implements GLSurfaceView.Renderer {
+public class AirHockeyRenderer implements GLSurfaceView.Renderer {
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
         glClearColor(1.0f,0.0f, 0.0f,0.0f);

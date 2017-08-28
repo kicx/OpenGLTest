@@ -1,4 +1,4 @@
-package com.dreams.foggy.opengltest;
+package com.dreams.foggy.airhockeydroid;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

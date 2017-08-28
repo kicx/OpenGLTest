@@ -1,4 +1,4 @@
-package com.dreams.foggy.opengltest;
+package com.dreams.foggy.airhockeydroid;
 
 import org.junit.Test;
 
