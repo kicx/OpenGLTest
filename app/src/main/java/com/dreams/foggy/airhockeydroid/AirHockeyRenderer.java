@@ -2,6 +2,10 @@ package com.dreams.foggy.airhockeydroid;
 
 import android.opengl.GLSurfaceView;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -15,6 +19,38 @@ import static android.opengl.GLES20.glViewport;
  */
 
 public class AirHockeyRenderer implements GLSurfaceView.Renderer {
+    private final static int POSITION_COMPONENT_COUNT = 2;
+
+    private final static int BYTES_PER_FLOAT = 4;
+    //stores data in native memory
+    private final FloatBuffer vertexData;
+
+
+    public AirHockeyRenderer() {
+        float[] tablesVerticesWithTriangles = {
+                //triangle 1
+                                 0f, 0f,
+                                 9f, 14f,
+                                 0f, 14f,
+                // triangle 2
+                                 0f, 0f,
+                                 9f, 0f,
+                                 9f, 0f,
+                                 9f, 14f,
+
+               // center line
+                                 0f,7f,
+                                  9f,7f,
+
+                // mallets
+                                4.5f, 2f,
+                                4.5f, 12f
+        };
+
+        vertexData = ByteBuffer.allocateDirect(tablesVerticesWithTriangles.length * BYTES_PER_FLOAT).order(ByteOrder.nativeOrder()).asFloatBuffer();
+        vertexData.put(tablesVerticesWithTriangles);
+    }
+
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
         glClearColor(1.0f,0.0f, 0.0f,0.0f);
